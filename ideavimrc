@@ -69,3 +69,9 @@ map <leader>f <Plug>(easymotion-f)
 
 " Surrounding
 Plug 'tpope/vim-surround'
+
+"Multiple Cursor
+Plug 'terryma/vim-multiple-cursors'
+map mc <A-n>
+map mx <A-x>
+map mp <A-p>

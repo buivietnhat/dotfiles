@@ -1,0 +1,6 @@
+MAVEN_HOME=/Applications/IntelliJ\ IDEA.app/Contents/plugins/maven/lib/maven3
+
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+PATH=$PATH:/usr/local/opt/riscv-gnu-toolchain/bin:/Users/nhatbui/Workspace/relearn/distributed-system/6.824-2012/lab/tools:$MAVEN_HOME/bin:/Users/nhatbui/Workspace/C++/cpp-project-template/tools
+export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"

@@ -115,14 +115,17 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-MAVEN_HOME=/Applications/IntelliJ\ IDEA.app/Contents/plugins/maven/lib/maven3
-
-export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-PATH=$PATH:/usr/local/opt/riscv-gnu-toolchain/bin:/Users/nhatbui/Workspace/relearn/distributed-system/6.824-2012/lab/tools:$MAVEN_HOME/bin:/Users/nhatbui/Workspace/C++/cpp-project-template/tools
-export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
-
-
 # Enable vi mode
 bindkey -v
 
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --zsh)"
+
+# aliases
+source ~/.aliases
+
+# source the ultility functions
+source ~/.functions
+
+# the personalize for specific env
+source ~/.zsh_personal

@@ -9,6 +9,9 @@
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
     ~/.ideavimrc: ideavimrc
+    ~/.gitconfig: gitconfig
+    ~/.functions: functions
+    ~/.aliases: aliases
 
 - create:
     - ~/downloads

@@ -1,0 +1,19 @@
+[includeIf "gitdir:~/"]
+    path = ~/.gitconfig_user
+
+[alias]
+    # Your existing aliases here
+    l = log --pretty=oneline -n 20 --graph --abbrev-commit
+    s = status -s
+    d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+    whoami = config user.email
+[core]
+	editor = code --wait
+[diff]
+    tool = default-difftool
+[difftool "default-difftool"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+    tool = code
+[mergetool "code"]
+    cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED

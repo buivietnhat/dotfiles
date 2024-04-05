@@ -118,9 +118,6 @@ source $ZSH/oh-my-zsh.sh
 # Enable vi mode
 bindkey -v
 
-# Set up fzf key bindings and fuzzy completion
-eval "$(fzf --zsh)"
-
 # aliases
 source ~/.aliases
 
@@ -129,3 +126,6 @@ source ~/.functions
 
 # the personalize for specific env
 source ~/.zsh_personal
+
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --zsh)"

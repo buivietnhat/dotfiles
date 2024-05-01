@@ -79,9 +79,16 @@ map mp <A-p>
 "Which key
 set which-key
 " disable the timeout option
-set notimeout
-" increase the timeoutlen (default: 1000), don't add space around the equal sign
-set timeoutlen=500
+set timeout=true
+set timeoutlen=2000
 
 "Commentary
 Plug 'tpope/vim-commentary'
+
+"Debugger
+map <leader>i <Action>(StepInto)
+map <leader>o <Action>(StepOver)
+map <leader>e <Action>(StepOut)
+
+"Run
+map <leader>r <Action>(Run)

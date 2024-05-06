@@ -80,10 +80,10 @@ map mx <A-x>
 map mp <A-p>
 
 "Which key
-set which-key
+"set which-key
 " disable the timeout option
-set timeout=true
-set timeoutlen=5000
+"set timeout=true
+"set timeoutlen=5000
 
 "Commentary
 Plug 'tpope/vim-commentary'
@@ -100,3 +100,4 @@ map <leader>r <Action>(Run)
 map <leader>ff <Action>(GotoFile)
 map <leader>fe <Action>(SearchEverywhere)
 map <leader>fs <Action>(TextSearchAction)
+map <leader>fc <Action>(GotoClass)

@@ -89,9 +89,9 @@ map mp <A-p>
 Plug 'tpope/vim-commentary'
 
 "Debugger
-map <leader>i <Action>(StepInto)
-map <leader>o <Action>(StepOver)
-map <leader>e <Action>(StepOut)
+"map <leader>i <Action>(StepInto)
+"map <leader>o <Action>(StepOver)
+"map <leader>e <Action>(StepOut)
 
 "Run
 map <leader>r <Action>(Run)

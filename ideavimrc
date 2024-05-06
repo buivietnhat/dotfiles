@@ -45,6 +45,9 @@ map <leader>fs :action FileStructurePopup<CR>
 
 " NerdTree
 Plug 'preservim/nerdtree'
+map <leader>ee :NERDTreeFocus<CR>
+map <leader>et :NERDTreeToggle<CR>
+map <leader>ef :NERDTreeFind<CR>
 
 " Window navigation
 nnoremap <c-m> :action MoveEditorToOppositeTabGroup<CR>
@@ -80,7 +83,7 @@ map mp <A-p>
 set which-key
 " disable the timeout option
 set timeout=true
-set timeoutlen=2000
+set timeoutlen=5000
 
 "Commentary
 Plug 'tpope/vim-commentary'

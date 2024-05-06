@@ -95,3 +95,8 @@ map <leader>e <Action>(StepOut)
 
 "Run
 map <leader>r <Action>(Run)
+
+"Navigae
+map <leader>ff <Action>(GotoFile)
+map <leader>fe <Action>(SearchEverywhere)
+map <leader>fs <Action>(TextSearchAction)

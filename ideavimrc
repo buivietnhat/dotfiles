@@ -43,7 +43,7 @@ map <leader>fs :action FileStructurePopup<CR>
 " NerdTree
 Plug 'preservim/nerdtree'
 map <leader>ee :NERDTreeFocus<CR>
-map <leader>et :NERDTreeToggle<CR>
+map <leader>ew :NERDTreeToggle<CR>
 map <leader>ef :NERDTreeFind<CR>
 
 " Window navigation

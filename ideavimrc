@@ -99,3 +99,6 @@ map <leader>ff <Action>(GotoFile)
 map <leader>fe <Action>(SearchEverywhere)
 map <leader>ft <Action>(TextSearchAction)
 map <leader>fc <Action>(GotoClass)
+
+"Debug
+map <leader>; <Action>(ToggleLineBreakpoint)

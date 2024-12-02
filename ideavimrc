@@ -47,17 +47,13 @@ map <leader>ew :NERDTreeToggle<CR>
 map <leader>ef :NERDTreeFind<CR>
 
 " Window navigation
-nnoremap <c-m> :action MoveEditorToOppositeTabGroup<CR>
+nnoremap <M-m> :action MoveEditorToOppositeTabGroup<CR>
 
 " Move between tabs using Ctr l,k,j,h
-sethandler <c-j> a:vim
-sethandler <c-k> a:vim
-sethandler <c-l> a:vim
-sethandler <c-h> a:vim
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
+ nnoremap <M-h> <c-w>h
+ nnoremap <M-l> <c-w>l
+ nnoremap <M-j> <c-w>j
+ nnoremap <M-k> <c-w>k
 
 nnoremap <TAB> :action NextTab<CR>
 nnoremap <s-TAB> :action PreviousTab<CR>
@@ -85,16 +81,12 @@ map mp <A-p>
 "Commentary
 Plug 'tpope/vim-commentary'
 
-"Debugger
-"map <leader>i <Action>(StepInto)
-"map <leader>o <Action>(StepOver)
-"map <leader>e <Action>(StepOut)
 
 "Run, Build
 map <leader>r <Action>(Run)
 map<leader>b <Action>(CidrBuildRunToolbar)
 
-"Navigae
+"Navigate
 map <leader>ff <Action>(GotoFile)
 map <leader>fe <Action>(SearchEverywhere)
 map <leader>ft <Action>(TextSearchAction)
@@ -102,3 +94,9 @@ map <leader>fc <Action>(GotoClass)
 
 "Debug
 map <leader>; <Action>(ToggleLineBreakpoint)
+
+"Use <leader>v to enter visual block mode
+nnoremap<leader>v <C-v>
+
+" Call Hierarchy
+map<leader>h <Action>(CallHierarchy)

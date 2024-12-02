@@ -15,7 +15,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="sorin"
 
 
 # Set list of themes to pick from when loading at random
@@ -128,4 +128,12 @@ source ~/.functions
 source ~/.zsh_personal
 
 # Set up fzf key bindings and fuzzy completion
-eval "$(fzf --zsh)"
+# eval "$(fzf --zsh)"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+## Automatically start tmux if not already inside a tmux session
+#if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+#    tmux
+#fi
+
+

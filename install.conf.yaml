@@ -14,7 +14,6 @@
     ~/.aliases: aliases
 
 - create:
-    - ~/downloads
     - ~/.vim/undo-history
 
 - shell:

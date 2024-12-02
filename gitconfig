@@ -1,6 +1,6 @@
-[includeIf "gitdir:~/"]
-    path = ~/.gitconfig_user
-
+[user]
+    name = buivietnhat
+    email = buivietnhatctqb@gmail.com
 [alias]
     # Your existing aliases here
     l = log --pretty=oneline -n 20 --graph --abbrev-commit
@@ -17,3 +17,5 @@
     tool = code
 [mergetool "code"]
     cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
+[credential]
+	helper = store

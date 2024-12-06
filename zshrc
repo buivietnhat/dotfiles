@@ -48,7 +48,7 @@ ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=136
 ZSH_HIGHLIGHT_STYLES[assign]=fg=037
 
 # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#808080,bold,underline'
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#87afff,underline'
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/

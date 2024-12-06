@@ -12,6 +12,7 @@
     ~/.gitconfig: gitconfig
     ~/.functions: functions
     ~/.aliases: aliases
+    ~/.config/alacritty/alacritty.toml: alacritty.toml
 
 - create:
     - ~/.vim/undo-history

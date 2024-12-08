@@ -26,13 +26,13 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 
 typeset -gA ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[default]=none
-ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=160
+ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=red
 ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=037,bold #,standout
-ZSH_HIGHLIGHT_STYLES[alias]=fg=064,bold
-ZSH_HIGHLIGHT_STYLES[builtin]=fg=064,bold
-ZSH_HIGHLIGHT_STYLES[function]=fg=064,bold
-ZSH_HIGHLIGHT_STYLES[command]=fg=064,bold
-ZSH_HIGHLIGHT_STYLES[precommand]=fg=064,underline
+ZSH_HIGHLIGHT_STYLES[alias]=fg=green,bold
+ZSH_HIGHLIGHT_STYLES[builtin]=fg=green,bold
+ZSH_HIGHLIGHT_STYLES[function]=fg=green,bold
+ZSH_HIGHLIGHT_STYLES[command]=fg=green,bold
+ZSH_HIGHLIGHT_STYLES[precommand]=fg=green,underline
 ZSH_HIGHLIGHT_STYLES[commandseparator]=none
 ZSH_HIGHLIGHT_STYLES[hashed-command]=fg=037
 ZSH_HIGHLIGHT_STYLES[path]=fg=166,underline

@@ -18,6 +18,17 @@ return {
                 i = {
                     ["<C-j>"] = "move_selection_next",
                     ["<C-k>"] = "move_selection_previous",
+                    ['<C-o>'] = function(prompt_bufnr)
+                      local actions = require('telescope.actions')
+                      local action_state = require('telescope.actions.state')
+                      
+                      -- Get the current selected entry
+                      local entry = action_state.get_selected_entry()
+                      if entry then
+                          -- Open the selected file
+                          actions.select_default(prompt_bufnr)
+                      end
+                    end
                 },
                 n = {
                     ["<C-j>"] = "move_selection_next",
@@ -29,7 +40,7 @@ return {
         local builtin = require("telescope.builtin")
         vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
         vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
-        vim.keymap.set("n", "<C-o>", builtin.oldfiles, {})
+        -- vim.keymap.set("n", "<C-o>", builtin.oldfiles, {})
   
         require("telescope").load_extension("ui-select")
       end,

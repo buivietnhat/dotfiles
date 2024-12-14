@@ -20,3 +20,7 @@ vim.keymap.set('n', '<C-h>', '0', { noremap = true, silent = true })
 
 vim.keymap.set('i', '<C-l>', '<C-o>$', { noremap = true, silent = true })
 vim.keymap.set('i', '<C-h>', '<C-o>0', { noremap = true, silent = true })
+
+vim.keymap.set('v', '<C-l>', '$', { noremap = true, silent = true })
+vim.keymap.set('v', '<C-h>', '0', { noremap = true, silent = true })
+

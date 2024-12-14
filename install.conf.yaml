@@ -13,6 +13,7 @@
     ~/.functions: functions
     ~/.aliases: aliases
     ~/.config/alacritty/alacritty.toml: alacritty.toml
+    ~/.config/nvim: nvim
 
 - create:
     - ~/.vim/undo-history

@@ -14,6 +14,7 @@
     ~/.aliases: aliases
     ~/.config/alacritty/alacritty.toml: alacritty.toml
     ~/.config/nvim: nvim
+    ~/.config/i3: i3
 
 - create:
     - ~/.vim/undo-history

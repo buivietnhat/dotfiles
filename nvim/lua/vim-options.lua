@@ -8,6 +8,9 @@ vim.o.showmode = false
 vim.wo.number = true        -- Absolute line numbers
 vim.wo.relativenumber = true  -- Relative line numbers
 
+-- keep more context on screen while scrolling
+vim.opt.scrolloff = 2
+
 -- case-insensitive search/replace
 vim.opt.ignorecase = true
 
@@ -55,3 +58,4 @@ vim.api.nvim_create_autocmd('Filetype', {
   group = email,
   command = 'setlocal formatoptions+=w',
 })
+

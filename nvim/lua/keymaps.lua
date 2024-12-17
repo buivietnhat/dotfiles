@@ -49,10 +49,11 @@ vim.keymap.set('n', '<leader>s', '<cmd>w<cr>')
 vim.keymap.set('n', 'j', 'gj')
 vim.keymap.set('n', 'k', 'gk')
 
--- -- C-[ to go back
--- vim.api.nvim_set_keymap('n', '<C-[>', '<C-o>', { noremap = true, silent = true })
--- -- C-] to go next
--- vim.api.nvim_set_keymap('n', '<C-]>', '<C-i>', { noremap = true, silent = true })
 
--- vim.keymap.set('n', '<a-[>', '<c-o>')
--- vim.keymap.set('n', '<a-]>', '<c-i>')
+-- Alt-s to stop searching
+vim.keymap.set('v', '<A-s>', '<cmd>nohlsearch<cr>')
+vim.keymap.set('n', '<A-s>', '<cmd>nohlsearch<cr>')
+
+vim.keymap.set('n', '<leader>w', 'yiw')
+vim.keymap.set('n', '<leader>p', '"0P')
+

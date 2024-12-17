@@ -41,6 +41,10 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+# Increase/Decrease Brightness by 10%
+bindsym XF86MonBrightnessUp exec brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
+
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -205,6 +209,9 @@ bindsym Ctrl+Mod1+f exec --no-startup-id thunar
 
 # Launch Bluetooth Manager with Ctrl+Shift+b
 bindsym Ctrl+Mod1+b exec --no-startup-id blueman-manager 
+
+# Launch ARandR (monitor manager) with Mod+Shift+a
+bindsym Ctrl+Mod1+a exec arandr
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)

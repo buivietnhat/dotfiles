@@ -54,10 +54,10 @@ bindsym Mod1+Return exec alacritty
 
 # kill focused window
 #bindsym $mod+q kill
-bindsym Ctrl+q kill
+bindsym Mod1+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym Mod1+space exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -65,28 +65,28 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym Mod1+Shift+h focus left
-bindsym Mod1+Shfit+j focus down
-bindsym Mod1+Shift+k focus up
-bindsym Mod1+Shift+l focus right
+bindsym Mod1+h focus left
+bindsym Mod1+j focus down
+bindsym Mod1+k focus up
+bindsym Mod1+l focus right
 
 # alternatively, you can use the cursor keys:
-#bindsym $mod+Left focus left
-#bindsym $mod+Down focus down
-#bindsym $mod+Up focus up
-#bindsym $mod+Right focus right
+bindsym $mod1+Left focus left
+bindsym $mod1+Down focus down
+bindsym $mod1+Up focus up
+bindsym $mod1+Right focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym Mod1+Shift+h move left
+bindsym Mod1+Shift+j move down
+bindsym Mod1+Shift+k move up
+bindsym Mod1+Shift+l move right
 
 # alternatively, you can use the cursor keys:
-#bindsym $mod+Shift+Left move left
-#bindsym $mod+Shift+Down move down
-#bindsym $mod+Shift+Up move up
-#bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -106,7 +106,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+#bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -154,7 +154,7 @@ bindsym Mod1+Shift+0 move container to workspace number $ws10
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym Mod1+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
@@ -200,12 +200,20 @@ bindsym Ctrl+Mod1+l exec --no-startup-id clion
 # Launch Evince reader with Ctrl+Shift+d
 bindsym Ctrl+Mod1+d exec --no-startup-id evince 
 
+# Launch File Manager (Thunar) ith Ctrl+Shift+f
+bindsym Ctrl+Mod1+f exec --no-startup-id thunar 
+
+# Launch Bluetooth Manager with Ctrl+Shift+b
+bindsym Ctrl+Mod1+b exec --no-startup-id blueman-manager 
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
         font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
         font pango:DejaVu Sans Mono 13
+        tray_output primary
+        position top
 }
 
 
@@ -218,6 +226,11 @@ exec --no-startup-id xrandr \
 # Remap Caps Lock to Escape
 exec_always --no-startup-id setxkbmap -option caps:escape
 
+# Run the dynamic workspace assignment script at startup
+exec --no-startup-id ~/.config/i3/dynamic_workspace.sh
+
 
 # Open elacrity be default
-exec alacritty
+#exec alacritty
+
+

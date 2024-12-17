@@ -17,6 +17,10 @@ vim.opt.smartcase = true
 -- always draw sign column. prevents buffer moving when adding/deleting sign
 vim.opt.signcolumn = 'yes'
 
+-- infinite undo!
+-- NOTE: ends up in ~/.local/state/nvim/undo/
+vim.opt.undofile = true
+
 
 
 

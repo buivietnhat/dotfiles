@@ -50,9 +50,9 @@ vim.keymap.set('n', 'j', 'gj')
 vim.keymap.set('n', 'k', 'gk')
 
 
--- Alt-s to stop searching
-vim.keymap.set('v', '<A-s>', '<cmd>nohlsearch<cr>')
-vim.keymap.set('n', '<A-s>', '<cmd>nohlsearch<cr>')
+-- C-s to stop searching
+vim.keymap.set('v', '<C-s>', '<cmd>nohlsearch<cr>')
+vim.keymap.set('n', '<C-s>', '<cmd>nohlsearch<cr>')
 
 vim.keymap.set('n', '<leader>w', 'yiw')
 vim.keymap.set('n', '<leader>p', '"0P')

@@ -8,7 +8,7 @@ return {
 				-- block = "<leader>.", -- Toggle block comment
 			},
 			opleader = {
-				line = "<leader>,",
+				line = "<leader>/",
 				block = "<leader>.",
 			},
 			mappings = {

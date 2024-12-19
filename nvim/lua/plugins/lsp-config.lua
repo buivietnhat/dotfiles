@@ -14,8 +14,8 @@ return {
 					-- Buffer local mappings.
 					-- See `:help vim.lsp.*` for documentation on any of the below functions
 					local opts = { buffer = ev.buf }
-					vim.keymap.set("n", "<A-b>", vim.lsp.buf.declaration, opts)
-					vim.keymap.set("n", "<C-b>", vim.lsp.buf.definition, opts)
+					vim.keymap.set("n", "<C-Shift-b>", vim.lsp.buf.declaration, opts)
+					vim.keymap.set("n", "<C-o>", vim.lsp.buf.definition, opts)
 					vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 					vim.keymap.set("n", "<A-i>", vim.lsp.buf.implementation, opts)
 					vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
@@ -28,9 +28,9 @@ return {
 					vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
 					vim.keymap.set({ "n", "v" }, "<leader>a", vim.lsp.buf.code_action, opts)
 					vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-					vim.keymap.set("n", "<leader>f", function()
-						vim.lsp.buf.format({ async = true })
-					end, opts)
+					-- vim.keymap.set("n", "<leader>f", function()
+					-- 	vim.lsp.buf.format({ async = true })
+					-- end, opts)
 
 					local client = vim.lsp.get_client_by_id(ev.data.client_id)
 

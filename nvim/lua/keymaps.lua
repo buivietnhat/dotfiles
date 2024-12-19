@@ -57,3 +57,21 @@ vim.keymap.set('n', '<C-s>', '<cmd>nohlsearch<cr>')
 vim.keymap.set('n', '<leader>w', 'yiw')
 vim.keymap.set('n', '<leader>p', '"0P')
 
+-- the % is a bit hard to press
+vim.keymap.set('n', '-', '%')
+vim.keymap.set('v', '-', '%')
+vim.keymap.set('o', '-', '%')
+
+-- Remap Ctrl-i to work like Ctrl-o (jump back)
+vim.keymap.set('n', '<C-i>', '<C-o>')
+
+-- Remap Ctrl-b to work like Ctrl-i (jump forward)
+vim.keymap.set('n', '<C-b>', '<C-i>')
+
+-- Quick duplicate
+vim.keymap.set('n', '<A-d>', 'yyp')
+
+
+
+
+

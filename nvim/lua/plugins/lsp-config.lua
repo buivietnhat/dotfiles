@@ -5,6 +5,8 @@ return {
 		config = function()
 			local lspconfig = require("lspconfig")
 
+      require('java').setup()
+
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 				callback = function(ev)
@@ -63,10 +65,6 @@ return {
 
 			-- Set up JDTLS for Java
 			lspconfig.jdtls.setup({
-				on_attach = function(client, bufnr)
-					client.server_capabilities.signatureHelpProvider = true
-				end,
-				capabilities = capabilities,
 			})
 		end,
 	},

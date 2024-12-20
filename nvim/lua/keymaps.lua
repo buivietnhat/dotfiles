@@ -27,7 +27,7 @@ vim.keymap.set('v', '<C-h>', '^', { noremap = true, silent = true })
 -- <leader><leader> toggles between buffers
 vim.keymap.set('n', '<leader><leader>', '<c-^>')
 
-vim.keymap.set('n', '<c-;>', '<c-i>')
+-- vim.keymap.set('n', '<c-;>', '<c-i>')
 
 vim.keymap.set('n', ';', ':')
 
@@ -70,6 +70,7 @@ vim.keymap.set('n', '<C-b>', '<C-i>')
 
 -- Quick duplicate
 vim.keymap.set('n', '<A-d>', 'yyp')
+
 
 
 

@@ -5,7 +5,7 @@ return {
 		config = function()
 			local lspconfig = require("lspconfig")
 
-      require('java').setup()
+			require("java").setup()
 
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("UserLspConfig", {}),
@@ -64,8 +64,27 @@ return {
 			lspconfig.pyright.setup({})
 
 			-- Set up JDTLS for Java
-			lspconfig.jdtls.setup({
-			})
+			lspconfig.jdtls.setup({})
+
+			-- Bash LSP
+			local configs = require("lspconfig.configs")
+			if not configs.bash_lsp and vim.fn.executable("bash-language-server") == 1 then
+				configs.bash_lsp = {
+					default_config = {
+						cmd = { "bash-language-server", "start" },
+						filetypes = { "sh" },
+						root_dir = require("lspconfig").util.find_git_ancestor,
+						init_options = {
+							settings = {
+								args = {},
+							},
+						},
+					},
+				}
+			end
+			if configs.bash_lsp then
+				lspconfig.bash_lsp.setup({})
+			end
 		end,
 	},
 	{
@@ -74,7 +93,7 @@ return {
 			ensure_installed = {
 				"clangd",
 			},
-      automatic_isntallation = true
+			automatic_isntallation = true,
 		},
 	},
 }

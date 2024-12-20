@@ -71,6 +71,9 @@ vim.keymap.set('n', '<C-b>', '<C-i>')
 -- Quick duplicate
 vim.keymap.set('n', '<A-d>', 'yyp')
 
+-- Quick delete
+vim.keymap.set('n', 'D', 'd$')
+
 
 
 

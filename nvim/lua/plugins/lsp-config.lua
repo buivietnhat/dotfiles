@@ -66,6 +66,12 @@ return {
 			-- Set up JDTLS for Java
 			lspconfig.jdtls.setup({})
 
+			-- Set up for yaml 
+			lspconfig.yamlls.setup({})
+
+      -- Set up for xml
+      lspconfig.lemminx.setup({})
+
 			-- Bash LSP
 			local configs = require("lspconfig.configs")
 			if not configs.bash_lsp and vim.fn.executable("bash-language-server") == 1 then

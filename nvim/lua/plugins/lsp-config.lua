@@ -5,8 +5,6 @@ return {
 		config = function()
 			local lspconfig = require("lspconfig")
 
-			require("java").setup()
-
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 				callback = function(ev)
@@ -64,13 +62,16 @@ return {
 			lspconfig.pyright.setup({})
 
 			-- Set up JDTLS for Java
+			-- require("java").setup()
 			lspconfig.jdtls.setup({})
 
-			-- Set up for yaml 
+			-- Set up for yaml
 			lspconfig.yamlls.setup({})
 
-      -- Set up for xml
-      lspconfig.lemminx.setup({})
+			-- Set up for xml
+			lspconfig.lemminx.setup({})
+
+			-- Set up for lua
 
 			-- Bash LSP
 			local configs = require("lspconfig.configs")
@@ -96,10 +97,7 @@ return {
 	{
 		"williamboman/mason.nvim",
 		opts = {
-			ensure_installed = {
-				"clangd",
-			},
-			automatic_isntallation = true,
+			automatic_installation = true,
 		},
 	},
 }

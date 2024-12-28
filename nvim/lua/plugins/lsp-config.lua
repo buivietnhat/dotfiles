@@ -62,7 +62,7 @@ return {
 			lspconfig.pyright.setup({})
 
 			-- Set up JDTLS for Java
-			-- require("java").setup()
+			require("java").setup()
 			lspconfig.jdtls.setup({})
 
 			-- Set up for yaml
@@ -96,6 +96,9 @@ return {
 	},
 	{
 		"williamboman/mason.nvim",
+    ensure_installed = {
+      "java-debug-adapter"
+    },
 		opts = {
 			automatic_installation = true,
 		},

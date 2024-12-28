@@ -50,8 +50,7 @@ bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 floating_modifier $mod
 
 # move tiling windows via drag & drop by left-clicking into the title bar,
-# or left-clicking anywhere into the window while holding the floating modifier.
-tiling_drag modifier titlebar
+# or left-clicking anywhere into the window while holding the floating modifier. tiling_drag modifier titlebar
 
 # start a terminal
 bindsym Mod1+Return exec alacritty
@@ -69,22 +68,22 @@ bindsym Mod1+space exec --no-startup-id dmenu_run
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym Mod1+h exec --no-startup-id i3-msg focus left && i3-msg '[con_id=__focused__]' border pixel 1 && sleep 0.5 && i3-msg '[con_id=__focused__]' border none
+bindsym Mod1+j exec --no-startup-id i3-msg focus down && i3-msg '[con_id=__focused__]' border pixel 1 && sleep 0.5 && i3-msg '[con_id=__focused__]' border none 
+bindsym Mod1+k exec --no-startup-id i3-msg focus up && i3-msg '[con_id=__focused__]' border pixel 1 && sleep 0.5 && i3-msg '[con_id=__focused__]' border none 
+bindsym Mod1+l exec --no-startup-id i3-msg focus right && i3-msg '[con_id=__focused__]' border pixel 1 && sleep 0.5 && i3-msg '[con_id=__focused__]' border none  
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+Left exec --no-startup-id i3-msg focus left && i3-msg '[con_id=__focused__]' border pixel 1 && sleep 0.5 && i3-msg '[con_id=__focused__]' border none  
+bindsym $mod+Down exec --no-startup-id i3-msg focus down && i3-msg '[con_id=__focused__]' border pixel 1 && sleep 0.5 && i3-msg '[con_id=__focused__]' border none  
+bindsym $mod+Up exec --no-startup-id i3-msg focus up && i3-msg '[con_id=__focused__]' border pixel 1 && sleep 0.5 && i3-msg '[con_id=__focused__]' border none   
+bindsym $mod+Right exec --no-startup-id i3-msg focus right && i3-msg '[con_id=__focused__]' border pixel 1 && sleep 0.5 && i3-msg '[con_id=__focused__]' border none    
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym Mod1+Shift+h move left
+bindsym Mod1+Shift+j move down
+bindsym Mod1+Shift+k move up
+bindsym Mod1+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -92,14 +91,23 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+# Window border colors
+client.focused          #edf7ed #edf7ed #edf7ed #edf7ed
+client.focused_inactive #3E3E3E #3E3E3E #3E3E3E #3E3E3E
+client.unfocused        #3E3E3E #3E3E3E #3E3E3E #3E3E3E
+client.urgent           #FF5722 #FF5722 #FF5722 #FF5722
+
+# for_window [class=".*"] border pixel 1 
+
+
 # split in horizontal orientation
-# bindsym $mod+h split h
+bindsym $mod+h split h
 
 # split in vertical orientation
-# bindsym $mod+v split v
+bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+o fullscreen toggle
+bindsym Mod1+o fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -223,7 +231,7 @@ bar {
         font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
         font pango:DejaVu Sans Mono 13
         tray_output primary
-        position top
+        position bottom
 }
 
 
@@ -238,9 +246,15 @@ exec_always --no-startup-id setxkbmap -option caps:escape
 
 # Run the dynamic workspace assignment script at startup
 exec --no-startup-id ~/.config/i3/dynamic_workspace.sh
+ 
+# Restart i3
+bindsym $mod+Shift+r restart
+ 
+# Lock screen
+bindsym $mod+Shift+l exec i3lock
 
+# Power off
+bindsym $mod+Shift+p exec systemctl poweroff
 
-# Open elacrity be default
-#exec alacritty
 
 

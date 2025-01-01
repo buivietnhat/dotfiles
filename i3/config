@@ -97,8 +97,6 @@ client.focused_inactive #3E3E3E #3E3E3E #3E3E3E #3E3E3E
 client.unfocused        #3E3E3E #3E3E3E #3E3E3E #3E3E3E
 client.urgent           #FF5722 #FF5722 #FF5722 #FF5722
 
-# for_window [class=".*"] border pixel 1 
-
 
 # split in horizontal orientation
 bindsym $mod+h split h

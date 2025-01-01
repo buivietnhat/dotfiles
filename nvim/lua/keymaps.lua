@@ -37,7 +37,8 @@ vim.keymap.set('n', '<leader>v', '<cmd>read !xclip -o -selection clipboard<cr>')
 vim.keymap.set('n', '<leader>c', '<cmd>w !xclip -i -selection clipboard<cr><cr>')
 
 -- <leader>c in visual mode will copy the selected text into clipboard
-vim.keymap.set('v', '<leader>c', ':"<C-u>y<CR>:call system("xclip -selection clipboard", @0)<CR>', { noremap = true, silent = true })
+vim.keymap.set('v', '<leader>c', 'y:call system("xclip -selection clipboard", getreg("@"))<CR>', { noremap = true, silent = true })
+
 
 -- quick-save
 vim.keymap.set('n', '<leader>s', '<cmd>w<cr>')
@@ -55,7 +56,7 @@ vim.keymap.set('v', '<C-s>', '<cmd>nohlsearch<cr>')
 vim.keymap.set('n', '<C-s>', '<cmd>nohlsearch<cr>')
 
 vim.keymap.set('n', '<leader>w', 'yiw')
-vim.keymap.set('n', '<leader>p', '"0P')
+vim.keymap.set('n', '<leader>p', '"0p')
 
 -- the % is a bit hard to press
 vim.keymap.set('n', '-', '%')
@@ -74,7 +75,24 @@ vim.keymap.set('n', '<A-d>', 'yyp')
 -- Quick delete
 vim.keymap.set('n', 'D', 'd$')
 
+-- always center search results
+vim.keymap.set('n', 'n', 'nzz', { silent = true })
+vim.keymap.set('n', 'N', 'Nzz', { silent = true })
+vim.keymap.set('n', '*', '*zz', { silent = true })
+vim.keymap.set('n', '#', '#zz', { silent = true })
+vim.keymap.set('n', 'g*', 'g*zz', { silent = true })
 
+-- no arrow keys --- force yourself to use the home row
+vim.keymap.set('n', '<up>', '<nop>')
+vim.keymap.set('n', '<down>', '<nop>')
+vim.keymap.set('i', '<up>', '<nop>')
+vim.keymap.set('i', '<down>', '<nop>')
+vim.keymap.set('i', '<left>', '<nop>')
+vim.keymap.set('i', '<right>', '<nop>')
+
+-- let the left and right arrows be useful: they can switch buffers
+vim.keymap.set('n', '<left>', ':bp<cr>')
+vim.keymap.set('n', '<right>', ':bn<cr>')
 
 
 

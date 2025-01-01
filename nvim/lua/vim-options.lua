@@ -24,6 +24,11 @@ vim.opt.signcolumn = "yes"
 -- NOTE: ends up in ~/.local/state/nvim/undo/
 vim.opt.undofile = true
 
+--" Decent wildmenu
+-- in completion, when there is more than one match,
+-- list all matches, and only complete to longest common match
+vim.opt.wildmode = 'list:longest'
+
 -- highlight yanked text
 vim.api.nvim_create_autocmd("TextYankPost", {
 	pattern = "*",
@@ -51,3 +56,10 @@ vim.api.nvim_create_autocmd("Filetype", {
 	group = email,
 	command = "setlocal formatoptions+=w",
 })
+
+-- -- Auto-save when leaving insert mode
+-- vim.cmd('autocmd InsertLeave * silent! write')
+--
+-- -- Auto-save when text is changed
+-- vim.cmd('autocmd TextChanged,TextChangedI * silent! write')
+

@@ -33,7 +33,7 @@ Plug 'machakann/vim-highlightedyank'
 map <leader>d <Action>(Debug)
 
 map <leader>z :action ToggleDistractionFreeMode<CR>
-map <leader>s :action ShowIntentionActions<CR>
+map <leader>a :action ShowIntentionActions<CR>
 map <leader>fs :action FileStructurePopup<CR>
 
 "" Map \b to toggle the breakpoint on the current line

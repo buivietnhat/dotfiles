@@ -63,3 +63,12 @@ vim.api.nvim_create_autocmd("Filetype", {
 -- -- Auto-save when text is changed
 -- vim.cmd('autocmd TextChanged,TextChangedI * silent! write')
 
+-- Auto format when save
+-- Add this to your `init.lua` or equivalent Neovim config file
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*", -- Apply to all files; customize with file types (e.g., *.lua)
+    callback = function()
+        vim.lsp.buf.format({ async = false })
+    end,
+})
+

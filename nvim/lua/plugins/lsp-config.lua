@@ -58,6 +58,28 @@ return {
 				capabilities = capabilities,
 			})
 
+			-- Rust
+			lspconfig.rust_analyzer.setup({
+				-- Server-specific settings. See `:help lspconfig-setup`
+				settings = {
+					["rust-analyzer"] = {
+						cargo = {
+							allFeatures = true,
+						},
+						imports = {
+							group = {
+								enable = false,
+							},
+						},
+						completion = {
+							postfix = {
+								enable = false,
+							},
+						},
+					},
+				},
+			})
+
 			-- Optionally, configure other LSP servers
 			lspconfig.pyright.setup({})
 
@@ -96,9 +118,9 @@ return {
 	},
 	{
 		"williamboman/mason.nvim",
-    ensure_installed = {
-      "java-debug-adapter"
-    },
+		ensure_installed = {
+			"java-debug-adapter",
+		},
 		opts = {
 			automatic_installation = true,
 		},

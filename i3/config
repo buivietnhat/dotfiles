@@ -193,7 +193,7 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-bindsym $mod+r mode "resize"
+bindsym Mod1+r mode "resize"
 
 # Launch Google Chrome with Ctrl+Alt+C
 bindsym Ctrl+Mod1+c exec --no-startup-id google-chrome

@@ -67,8 +67,8 @@ vim.keymap.set("o", "-", "%")
 -- Remap Ctrl-i to work like Ctrl-o (jump back)
 vim.keymap.set("n", "<C-i>", "<C-o>")
 
--- Remap Ctrl-b to work like Ctrl-i (jump forward)
-vim.keymap.set("n", "<C-b>", "<C-i>")
+-- Remap Ctrl-f to work like Ctrl-i (jump forward)
+vim.keymap.set("n", "<C-f>", "<C-i>")
 
 -- Quick duplicate
 vim.keymap.set("n", "<leader>d", "yyp")

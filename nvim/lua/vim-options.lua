@@ -27,7 +27,7 @@ vim.opt.undofile = true
 --" Decent wildmenu
 -- in completion, when there is more than one match,
 -- list all matches, and only complete to longest common match
-vim.opt.wildmode = 'list:longest'
+vim.opt.wildmode = "list:longest"
 
 -- highlight yanked text
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -66,9 +66,20 @@ vim.api.nvim_create_autocmd("Filetype", {
 -- Auto format when save
 -- Add this to your `init.lua` or equivalent Neovim config file
 vim.api.nvim_create_autocmd("BufWritePre", {
-    pattern = "*", -- Apply to all files; customize with file types (e.g., *.lua)
-    callback = function()
-        vim.lsp.buf.format({ async = false })
-    end,
+	pattern = "*", -- Apply to all files; customize with file types (e.g., *.lua)
+	callback = function()
+		vim.lsp.buf.format({ async = false })
+	end,
 })
 
+-- never ever make my terminal beep
+vim.opt.vb = true
+-- more useful diffs (nvim -d)
+--- by ignoring whitespace
+vim.opt.diffopt:append("iwhite")
+--- and using a smarter algorithm
+--- https://vimways.org/2018/the-power-of-diff/
+--- https://stackoverflow.com/questions/32365271/whats-the-difference-between-git-diff-patience-and-git-diff-histogram
+--- https://luppeng.wordpress.com/2020/10/10/when-to-use-each-of-the-git-diff-algorithms/
+vim.opt.diffopt:append("algorithm:histogram")
+vim.opt.diffopt:append("indent-heuristic")

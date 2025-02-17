@@ -12,7 +12,7 @@ return {
 		vim.api.nvim_set_hl(0, "Comment", { ctermfg = 6 })
 		vim.api.nvim_set_hl(0, "Repeat", { ctermfg = 5 })
 		vim.api.nvim_set_hl(0, "StorageClass", { ctermfg = 5 })
-		vim.api.nvim_set_hl(0, "Macro", { ctermfg = 3 })
+		-- vim.api.nvim_set_hl(0, "Macro", { ctermfg = 3 })
 		vim.api.nvim_set_hl(0, "Identifier", { ctermfg = 3 })
 		vim.api.nvim_set_hl(0, "Character", { ctermfg = 3 })
 		vim.api.nvim_set_hl(0, "SignColumn", { ctermfg = 0, ctermbg = 0 })

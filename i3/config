@@ -266,10 +266,10 @@ exec_always --no-startup-id setxkbmap -option caps:escape
 
 # Run the dynamic workspace assignment script at startup
 exec --no-startup-id ~/.config/i3/dynamic_workspace.sh
- 
+
 # Restart i3
 bindsym $mod+Shift+r restart
- 
+
 # Lock screen
 bindsym $mod+Shift+l exec i3lock
 

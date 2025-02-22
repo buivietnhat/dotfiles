@@ -5,6 +5,8 @@ vim.cmd("set shiftwidth=2")
 vim.g.mapleader = " "
 vim.o.showmode = false
 
+vim.o.cursorline = true
+
 vim.wo.number = true -- Absolute line numbers
 vim.wo.relativenumber = true -- Relative line numbers
 

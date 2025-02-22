@@ -15,7 +15,8 @@ return {
 		-- vim.api.nvim_set_hl(0, "Character", { ctermfg = 3 })
 		vim.api.nvim_set_hl(0, "SignColumn", { ctermfg = 0, ctermbg = 0 })
 		vim.api.nvim_set_hl(0, "LineNr", { ctermfg = 8, ctermbg = 0 })
-		-- vim.api.nvim_set_hl(0, "CursorLineNr", { ctermfg = 1, cterm = bold })
+		vim.api.nvim_set_hl(0, "CursorLineNr", { ctermfg = 12, bold = true })
+		vim.api.nvim_set_hl(0, "CursorLine", { ctermbg = NONE })
 		-- Make it clearly visible which argument we're at.
 		local marked = vim.api.nvim_get_hl(0, { name = "PMenu" })
 		vim.api.nvim_set_hl(

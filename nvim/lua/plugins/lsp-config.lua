@@ -7,6 +7,13 @@ return {
 
 			-- Global mappings.
 			-- See `:help vim.diagnostic.*` for documentation on any of the below functions
+			vim.diagnostic.config({
+				virtual_text = false, -- Disable inline diagnostics
+				-- signs = false, -- Disable signs in the gutter (optional)
+				underline = false, -- Disable underlining errors/warnings
+				update_in_insert = false, -- Do not show diagnostics while typing
+			})
+
 			vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
 			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 			vim.keymap.set("n", "]d", vim.diagnostic.goto_next)

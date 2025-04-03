@@ -14,7 +14,7 @@ SECONDARY=$(xrandr --query | grep " connected" | grep -v " primary" | awk '{prin
 # Assign workspaces to monitors
 i3-msg --socket="$SOCKET" "workspace I; move workspace to output $PRIMARY"
 if [[ -n "$SECONDARY" ]]; then
-    i3-msg --socket="$SOCKET" "workspace IX; move workspace to output $SECONDARY"
+    i3-msg --socket="$SOCKET" "workspace VIII; move workspace to output $SECONDARY"
 fi
 
 

@@ -56,8 +56,8 @@ vim.keymap.set("n", "k", "gk")
 vim.keymap.set("v", "<C-s>", "<cmd>nohlsearch<cr>")
 vim.keymap.set("n", "<C-s>", "<cmd>nohlsearch<cr>")
 
-vim.keymap.set("n", "<leader>w", "yiw")
-vim.keymap.set("n", "<leader>p", '"0p')
+vim.keymap.set("n", "<A-w>", "yiw")
+vim.keymap.set("n", "<A-p>", '"0p')
 
 -- the % is a bit hard to press
 vim.keymap.set("n", "-", "%")
@@ -71,7 +71,7 @@ vim.keymap.set("n", "<C-i>", "<C-o>")
 vim.keymap.set("n", "<C-b>", "<C-i>")
 
 -- Quick duplicate
-vim.keymap.set("n", "<leader>d", "yyp")
+vim.keymap.set("n", "<A-d>", "yyp")
 
 -- Quick delete
 vim.keymap.set("n", "D", "d$")
@@ -82,6 +82,8 @@ vim.keymap.set("n", "N", "Nzz", { silent = true })
 vim.keymap.set("n", "*", "*zz", { silent = true })
 vim.keymap.set("n", "#", "#zz", { silent = true })
 vim.keymap.set("n", "g*", "g*zz", { silent = true })
+
+-- vim.keymap.set("n", "<C-o>", "<C-o>zz", { silent = true })
 
 -- no arrow keys --- force yourself to use the home row
 vim.keymap.set("n", "<up>", "<nop>")

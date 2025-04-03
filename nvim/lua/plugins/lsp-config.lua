@@ -8,15 +8,15 @@ return {
 			-- Global mappings.
 			-- See `:help vim.diagnostic.*` for documentation on any of the below functions
 			vim.diagnostic.config({
-				virtual_text = false, -- Disable inline diagnostics
+				-- virtual_text = false, -- Disable inline diagnostics
 				-- signs = false, -- Disable signs in the gutter (optional)
 				underline = false, -- Disable underlining errors/warnings
 				update_in_insert = false, -- Do not show diagnostics while typing
 			})
 
-			vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
-			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-			vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+			vim.keymap.set("n", "<A-e>", vim.diagnostic.open_float)
+			vim.keymap.set("n", "]d", vim.diagnostic.goto_prev)
+			vim.keymap.set("n", "[d", vim.diagnostic.goto_next)
 			vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist)
 
 			vim.api.nvim_create_autocmd("LspAttach", {
@@ -30,6 +30,7 @@ return {
 					local opts = { buffer = ev.buf }
 					vim.keymap.set("n", "<C-Shift-b>", vim.lsp.buf.declaration, opts)
 					vim.keymap.set("n", "<C-o>", vim.lsp.buf.definition, opts)
+
 					vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 					vim.keymap.set("n", "<A-i>", vim.lsp.buf.implementation, opts)
 					vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
@@ -94,8 +95,8 @@ return {
 				},
 			})
 
-			-- Optionally, configure other LSP servers
-			lspconfig.pyright.setup({})
+			-- Python
+			lspconfig.ruff.setup({})
 
 			-- Set up JDTLS for Java
 			require("java").setup()
@@ -106,6 +107,14 @@ return {
 
 			-- Set up for xml
 			lspconfig.lemminx.setup({})
+
+      -- Set up for ruby
+      lspconfig.ruby_lsp.setup({
+      })
+
+      -- -- Set up for kotlin
+      -- lspconfig.kotlin_language_server.setup({
+      -- })
 
 			-- Set up for lua
 

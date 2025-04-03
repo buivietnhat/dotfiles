@@ -7,7 +7,9 @@ return {
 		vim.o.background = "dark"
 		-- XXX: hi Normal ctermbg=NONE
 		-- Make comments more prominent -- they are important.
-		vim.api.nvim_set_hl(0, "Comment", { ctermfg = 6 })
+		local bools = vim.api.nvim_get_hl(0, { name = "Boolean" })
+		vim.api.nvim_set_hl(0, "Comment", bools)
+		-- vim.api.nvim_set_hl(0, "Comment", { ctermfg = 6 })
 		-- vim.api.nvim_set_hl(0, "Repeat", { ctermfg = 5 })
 		-- vim.api.nvim_set_hl(0, "StorageClass", { ctermfg = 5 })
 		-- -- vim.api.nvim_set_hl(0, "Macro", { ctermfg = 3 })

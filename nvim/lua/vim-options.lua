@@ -5,6 +5,17 @@ vim.cmd("set shiftwidth=2")
 vim.g.mapleader = " "
 vim.o.showmode = false
 
+-- Set tab size = 4 for JS, HTML, CSS
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "javascript", "javascriptreact", "typescript", "typescriptreact", "html", "css" },
+  callback = function()
+    vim.opt_local.shiftwidth = 4  -- number of spaces used for autoindent
+    vim.opt_local.tabstop = 4     -- number of spaces per <Tab>
+    vim.opt_local.softtabstop = 4 -- spaces when editing <Tab>
+    vim.opt_local.expandtab = true -- convert tabs to spaces
+  end,
+})
+
 vim.o.cursorline = true
 
 vim.wo.number = true -- Absolute line numbers

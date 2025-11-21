@@ -7,14 +7,20 @@
     s = status -s
     d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
     whoami = config user.email
+    r = restore
 [core]
 	editor = code --wait
+
 [diff]
-    tool = default-difftool
-[difftool "default-difftool"]
-    cmd = code --wait --diff $LOCAL $REMOTE
+    tool = nvimdiff
+
+[difftool "nvimdiff"]
+    cmd = nvim -d "$LOCAL" "$REMOTE"
+    prompt = false
+
 [merge]
     tool = code
+
 [mergetool "code"]
     cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
 [credential]

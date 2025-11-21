@@ -58,6 +58,7 @@ vim.keymap.set("n", "<C-s>", "<cmd>nohlsearch<cr>")
 
 vim.keymap.set("n", "<A-w>", "yiw")
 vim.keymap.set("n", "<A-p>", '"0p')
+vim.keymap.set("n", "<leader>9", "yi(")
 
 -- the % is a bit hard to press
 vim.keymap.set("n", "-", "%")

@@ -120,3 +120,10 @@ source ~/.zsh_personal
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/nhatbui/.sdkman"
 [[ -s "/home/nhatbui/.sdkman/bin/sdkman-init.sh" ]] && source "/home/nhatbui/.sdkman/bin/sdkman-init.sh"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Created by `pipx` on 2025-10-09 01:42:36
+export PATH="$PATH:/home/nhatbui/.local/bin"

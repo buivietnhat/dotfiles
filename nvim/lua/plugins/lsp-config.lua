@@ -112,6 +112,21 @@ return {
       lspconfig.ruby_lsp.setup({
       })
 
+      -- Set up for golang
+      lspconfig.gopls.setup({
+      })
+
+      lspconfig.html.setup {
+      }
+      
+      -- CSS
+      lspconfig.cssls.setup {
+      }
+      
+      -- JavaScript / TypeScript
+      lspconfig.ts_ls.setup {
+      }
+
       -- -- Set up for kotlin
       -- lspconfig.kotlin_language_server.setup({
       -- })

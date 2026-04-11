@@ -127,3 +127,5 @@ export NVM_DIR="$HOME/.nvm"
 
 # Created by `pipx` on 2025-10-09 01:42:36
 export PATH="$PATH:/home/nhatbui/.local/bin"
+
+eval "$(zoxide init zsh)"

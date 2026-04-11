@@ -9,16 +9,16 @@ return {
 				null_ls.builtins.formatting.stylua,
 
 				--      -- JavaScript/TypeScript
-				--      null_ls.builtins.formatting.prettier,
+				null_ls.builtins.formatting.prettier,
 
 				--      -- Ruby
-				--      null_ls.builtins.diagnostics.erb_lint,
-				--      null_ls.builtins.diagnostics.rubocop,
-				--      null_ls.builtins.formatting.rubocop,
+				null_ls.builtins.diagnostics.erb_lint,
+				null_ls.builtins.diagnostics.rubocop,
+				null_ls.builtins.formatting.rubocop,
 
 				-- C++
-				--        null_ls.builtins.formatting.clang_format,
-				--        null_ls.builtins.diagnostics.cppcheck,
+				null_ls.builtins.formatting.clang_format,
+				null_ls.builtins.diagnostics.cppcheck,
 
 				-- Java
 				null_ls.builtins.formatting.google_java_format,
@@ -27,8 +27,8 @@ return {
 				--        }),
 
 				--      -- Python
-				--      null_ls.builtins.formatting.black,
-				--      null_ls.builtins.diagnostics.flake8,
+				null_ls.builtins.formatting.black,
+				-- null_ls.builtins.diagnostics.ruff,
 
 				--      -- Go
 				--      null_ls.builtins.formatting.gofmt,

@@ -27,3 +27,9 @@ alias dt="cd ~/Desktop"
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
+
+alias p=python3
+alias ls='eza --icons --group-directories-first'
+alias ll='eza -lh --icons --group-directories-first'
+alias la='eza -lah --icons --group-directories-first'
+alias tree='eza --tree --icons'

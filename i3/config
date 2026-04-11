@@ -105,7 +105,7 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym Mod1+o fullscreen toggle
+bindsym Mod1+e fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -210,6 +210,9 @@ bindsym Ctrl+Mod+l exec --no-startup-id clion
 # Launch Ruby Mine with Ctrl+Alt+r
 bindsym Ctrl+Mod1+r exec --no-startup-id rubymine  
 
+# Launch Pycharm Mine with Ctrl+Alt+p
+bindsym Ctrl+Mod1+p exec --no-startup-id pycharm  
+
 # Launch Evince reader with Ctrl+Shift+d
 bindsym Ctrl+Mod1+d exec --no-startup-id evince 
 
@@ -264,8 +267,9 @@ exec --no-startup-id xrandr \
   --output DisplayPort-1 --primary --mode 3440x1440 --pos 0x0 --rotate normal \
   --output DisplayPort-0 --mode 2560x1440 --pos 3440x0 --rotate right
 
-# Remap Caps Lock to Escape
-exec_always --no-startup-id setxkbmap -option caps:escape
+# Remap Caps Lock to Ctrl (tap = Escape, hold = Ctrl)
+exec_always --no-startup-id setxkbmap -option caps:ctrl_modifier
+exec_always --no-startup-id bash -c 'pkill xcape; sleep 0.2 && xcape -e "Caps_Lock=Escape"'
 
 # Run the dynamic workspace assignment script at startup
 exec --no-startup-id ~/.config/i3/dynamic_workspace.sh

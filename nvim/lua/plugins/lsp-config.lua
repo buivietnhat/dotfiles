@@ -33,7 +33,7 @@ return {
 
 					vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 					vim.keymap.set("n", "<A-i>", vim.lsp.buf.implementation, opts)
-					vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
+					-- vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
 					vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts)
 					vim.keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts)
 					vim.keymap.set("n", "<leader>wl", function()
@@ -96,7 +96,20 @@ return {
 			})
 
 			-- Python
-			lspconfig.ruff.setup({})
+			lspconfig.pyright.setup({})
+
+			lspconfig.ruff.setup({
+				on_attach = function(client, bufnr)
+					-- Disable hover in favor of Pyright
+					client.server_capabilities.hoverProvider = false
+				end,
+			})
+
+			-- require("conform").setup({
+			--   formatters_by_ft = {
+			--     python = { "black" },
+			--   },
+			-- })
 
 			-- Set up JDTLS for Java
 			require("java").setup()
@@ -108,28 +121,23 @@ return {
 			-- Set up for xml
 			lspconfig.lemminx.setup({})
 
-      -- Set up for ruby
-      lspconfig.ruby_lsp.setup({
-      })
+			-- Set up for ruby
+			lspconfig.ruby_lsp.setup({})
 
-      -- Set up for golang
-      lspconfig.gopls.setup({
-      })
+			-- Set up for golang
+			lspconfig.gopls.setup({})
 
-      lspconfig.html.setup {
-      }
-      
-      -- CSS
-      lspconfig.cssls.setup {
-      }
-      
-      -- JavaScript / TypeScript
-      lspconfig.ts_ls.setup {
-      }
+			lspconfig.html.setup({})
 
-      -- -- Set up for kotlin
-      -- lspconfig.kotlin_language_server.setup({
-      -- })
+			-- CSS
+			lspconfig.cssls.setup({})
+
+			-- JavaScript / TypeScript
+			lspconfig.ts_ls.setup({})
+
+			-- -- Set up for kotlin
+			-- lspconfig.kotlin_language_server.setup({
+			-- })
 
 			-- Set up for lua
 

@@ -18,6 +18,7 @@ return {
 						i = {
 							["<C-j>"] = "move_selection_next",
 							["<C-k>"] = "move_selection_previous",
+							["jj"] = "close",
 							["<C-o>"] = function(prompt_bufnr)
 								local actions = require("telescope.actions")
 								local action_state = require("telescope.actions.state")

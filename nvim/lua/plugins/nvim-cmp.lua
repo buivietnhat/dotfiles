@@ -24,10 +24,6 @@ return
 				--	['<C-b>'] = cmp.mapping.scroll_docs(-4),
 				--	['<C-k>'] = cmp.mapping.scroll_docs(4),
           ['<C-j>'] = cmp.mapping.select_next_item(),  -- Move to the next item in the autocomplete menu
-          ['jj'] = cmp.mapping(function(fallback)
-            if cmp.visible() then cmp.abort() end
-            vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Esc>', true, false, true), 'n', false)
-          end, { 'i' }),
           ['<C-k>'] = cmp.mapping.select_prev_item(),  -- Move to the previous item in the autocomplete menu
 					['<C-Space>'] = cmp.mapping.complete(),
 					['<C-e>'] = cmp.mapping.abort(),

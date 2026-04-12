@@ -26,8 +26,6 @@ vim.keymap.set("v", "<C-k>", "k", { noremap = true, silent = true })
 
 vim.keymap.set("i", "<C-l>", "<C-o>$", { noremap = true, silent = true })
 vim.keymap.set("i", "<C-h>", "<C-o>^", { noremap = true, silent = true })
-vim.keymap.set("i", "jj", "<Esc>", { noremap = true, silent = true })
-vim.keymap.set("v", "jj", "<Esc>", { noremap = true, silent = true })
 
 vim.keymap.set("v", "<C-l>", "$", { noremap = true, silent = true })
 vim.keymap.set("v", "<C-h>", "^", { noremap = true, silent = true })
@@ -59,6 +57,12 @@ vim.keymap.set("n", "<leader>s", "<cmd>w<cr>")
 -- make j and k move by visual line, not actual line, when text is soft-wrapped
 vim.keymap.set("n", "j", "gj")
 vim.keymap.set("n", "k", "gk")
+
+-- j and k move by visual line in visual and visual line mode
+vim.keymap.set("v", "j", "gj", { noremap = true, silent = true })
+vim.keymap.set("v", "k", "gk", { noremap = true, silent = true })
+vim.keymap.set("x", "j", "gj", { noremap = true, silent = true })
+vim.keymap.set("x", "k", "gk", { noremap = true, silent = true })
 
 -- C-s to stop searching
 vim.keymap.set("v", "<C-s>", "<cmd>nohlsearch<cr>")

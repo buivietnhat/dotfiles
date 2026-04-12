@@ -69,10 +69,10 @@ bindsym $mod+space exec --no-startup-id ~/.config/i3/toggle_input.sh
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym Mod1+h exec --no-startup-id i3-msg focus left && i3-msg '[con_id=__focused__]' border pixel 1 && sleep 0.5 && i3-msg '[con_id=__focused__]' border none
-bindsym Mod1+j exec --no-startup-id i3-msg focus down && i3-msg '[con_id=__focused__]' border pixel 1 && sleep 0.5 && i3-msg '[con_id=__focused__]' border none 
-bindsym Mod1+k exec --no-startup-id i3-msg focus up && i3-msg '[con_id=__focused__]' border pixel 1 && sleep 0.5 && i3-msg '[con_id=__focused__]' border none 
-bindsym Mod1+l exec --no-startup-id i3-msg focus right && i3-msg '[con_id=__focused__]' border pixel 1 && sleep 0.5 && i3-msg '[con_id=__focused__]' border none  
+bindsym $mod+h exec --no-startup-id i3-msg focus left && i3-msg '[con_id=__focused__]' border pixel 1 && sleep 0.5 && i3-msg '[con_id=__focused__]' border none
+bindsym $mod+j exec --no-startup-id i3-msg focus down && i3-msg '[con_id=__focused__]' border pixel 1 && sleep 0.5 && i3-msg '[con_id=__focused__]' border none
+bindsym $mod+k exec --no-startup-id i3-msg focus up && i3-msg '[con_id=__focused__]' border pixel 1 && sleep 0.5 && i3-msg '[con_id=__focused__]' border none
+bindsym $mod+l exec --no-startup-id i3-msg focus right && i3-msg '[con_id=__focused__]' border pixel 1 && sleep 0.5 && i3-msg '[con_id=__focused__]' border none
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left exec --no-startup-id i3-msg focus left && i3-msg '[con_id=__focused__]' border pixel 1 && sleep 0.5 && i3-msg '[con_id=__focused__]' border none  
@@ -98,9 +98,6 @@ client.focused_inactive #3E3E3E #3E3E3E #3E3E3E #3E3E3E
 client.unfocused        #3E3E3E #3E3E3E #3E3E3E #3E3E3E
 client.urgent           #FF5722 #FF5722 #FF5722 #FF5722
 
-
-# split in horizontal orientation
-bindsym $mod+h split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -263,10 +260,7 @@ bar {
 
 
 #set up display properly
-exec --no-startup-id xrandr \
-  --output eDP --off \
-  --output DisplayPort-1 --primary --mode 3440x1440 --pos 0x0 --rotate normal \
-  --output DisplayPort-0 --mode 2560x1440 --pos 3440x0 --rotate right
+exec --no-startup-id ~/.config/i3/display_setup.sh
 
 # Remap Caps Lock to Ctrl (tap = Escape, hold = Ctrl)
 exec_always --no-startup-id bash -c 'setxkbmap -option caps:ctrl_modifier && xmodmap -e "keycode 37 = NoSymbol"'

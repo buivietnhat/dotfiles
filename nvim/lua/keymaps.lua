@@ -38,6 +38,9 @@ vim.keymap.set("i", "<A-h>", "<C-o>^", { noremap = true, silent = true })
 vim.keymap.set("v", "<A-l>", "$", { noremap = true, silent = true })
 vim.keymap.set("v", "<A-h>", "^", { noremap = true, silent = true })
 
+-- jj to escape insert mode
+vim.keymap.set("i", "jj", "<Esc>", { noremap = true, silent = true })
+
 -- <leader><leader> toggles between buffers
 vim.keymap.set("n", "<leader><leader>", "<c-^>")
 

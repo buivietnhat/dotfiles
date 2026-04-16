@@ -8,6 +8,9 @@ alias gs="git s"
 
 alias gl="git l"
 
+gitdiff() { nvim -c "DiffviewOpen $*"; }
+alias gd=gitdiff
+
 alias nd="nvim -d"
 
 # will prompt will overwrite

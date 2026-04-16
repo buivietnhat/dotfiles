@@ -17,26 +17,20 @@ end
 vim.keymap.set("n", "<C-w>h", focus_left, { noremap = true, silent = true })
 vim.keymap.set("n", "<C-w>l", focus_right, { noremap = true, silent = true })
 
--- Move focus between windows with Ctrl+hjkl
-vim.keymap.set("n", "<C-h>", focus_left, { noremap = true, silent = true })
-vim.keymap.set("n", "<C-j>", "<C-w>j", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-k>", "<C-w>k", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-l>", focus_right, { noremap = true, silent = true })
+vim.keymap.set("n", "<C-l>", "$", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-h>", "^", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-j>", "j", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-k>", "k", { noremap = true, silent = true })
 
-vim.keymap.set("n", "<A-l>", "$", { noremap = true, silent = true })
-vim.keymap.set("n", "<A-h>", "^", { noremap = true, silent = true })
-vim.keymap.set("n", "<A-j>", "j", { noremap = true, silent = true })
-vim.keymap.set("n", "<A-k>", "k", { noremap = true, silent = true })
-vim.keymap.set("i", "<A-j>", "<C-o>j", { noremap = true, silent = true })
-vim.keymap.set("i", "<A-k>", "<C-o>k", { noremap = true, silent = true })
-vim.keymap.set("v", "<A-j>", "j", { noremap = true, silent = true })
-vim.keymap.set("v", "<A-k>", "k", { noremap = true, silent = true })
+vim.keymap.set("i", "<C-l>", "<C-o>$", { noremap = true, silent = true })
+vim.keymap.set("i", "<C-h>", "<C-o>^", { noremap = true, silent = true })
+vim.keymap.set("i", "<C-j>", "<C-o>j", { noremap = true, silent = true })
+vim.keymap.set("i", "<C-k>", "<C-o>k", { noremap = true, silent = true })
 
-vim.keymap.set("i", "<A-l>", "<C-o>$", { noremap = true, silent = true })
-vim.keymap.set("i", "<A-h>", "<C-o>^", { noremap = true, silent = true })
-
-vim.keymap.set("v", "<A-l>", "$", { noremap = true, silent = true })
-vim.keymap.set("v", "<A-h>", "^", { noremap = true, silent = true })
+vim.keymap.set("v", "<C-l>", "$", { noremap = true, silent = true })
+vim.keymap.set("v", "<C-h>", "^", { noremap = true, silent = true })
+vim.keymap.set("v", "<C-j>", "j", { noremap = true, silent = true })
+vim.keymap.set("v", "<C-k>", "k", { noremap = true, silent = true })
 
 -- jj to escape insert mode
 vim.keymap.set("i", "jj", "<Esc>", { noremap = true, silent = true })
@@ -88,11 +82,11 @@ vim.keymap.set("n", "-", "%")
 vim.keymap.set("v", "-", "%")
 vim.keymap.set("o", "-", "%")
 
--- Remap Alt-i to work like Ctrl-o (jump back)
-vim.keymap.set("n", "<A-i>", "<C-o>")
+-- Remap Ctrl-i to work like Ctrl-o (jump back)
+vim.keymap.set("n", "<C-i>", "<C-o>")
 
--- Remap Alt-b to work like Ctrl-i (jump forward)
-vim.keymap.set("n", "<A-b>", "<C-i>")
+-- Remap Ctrl-b to work like Ctrl-i (jump forward)
+vim.keymap.set("n", "<C-b>", "<C-i>")
 
 -- Quick duplicate
 vim.keymap.set("n", "<A-d>", "yyp")

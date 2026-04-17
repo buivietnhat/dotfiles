@@ -29,7 +29,7 @@ return {
 					-- See `:help vim.lsp.*` for documentation on any of the below functions
 					local opts = { buffer = ev.buf }
 					vim.keymap.set("n", "<C-Shift-b>", vim.lsp.buf.declaration, opts)
-					vim.keymap.set("n", "<A-o>", vim.lsp.buf.definition, opts)
+					vim.keymap.set("n", "<C-o>", vim.lsp.buf.definition, opts)
 
 					vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 					vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
@@ -111,10 +111,6 @@ return {
 			--   },
 			-- })
 
-			-- Set up JDTLS for Java
-			require("java").setup()
-			lspconfig.jdtls.setup({})
-
 			-- Set up for yaml
 			lspconfig.yamlls.setup({})
 
@@ -164,9 +160,7 @@ return {
 	},
 	{
 		"williamboman/mason.nvim",
-		ensure_installed = {
-			"java-debug-adapter",
-		},
+		ensure_installed = {},
 		opts = {
 			automatic_installation = true,
 		},

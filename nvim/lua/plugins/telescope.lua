@@ -16,9 +16,9 @@ return {
 				defaults = {
 					mappings = {
 						i = {
-							["<A-j>"] = "move_selection_next",
-							["<A-k>"] = "move_selection_previous",
-							["<A-o>"] = function(prompt_bufnr)
+							["<C-j>"] = "move_selection_next",
+							["<C-k>"] = "move_selection_previous",
+							["<C-o>"] = function(prompt_bufnr)
 								local actions = require("telescope.actions")
 								local action_state = require("telescope.actions.state")
 
@@ -31,8 +31,8 @@ return {
 							end,
 						},
 						n = {
-							["<A-j>"] = "move_selection_next",
-							["<A-k>"] = "move_selection_previous",
+							["<C-j>"] = "move_selection_next",
+							["<C-k>"] = "move_selection_previous",
 						},
 					},
 				},
@@ -40,7 +40,7 @@ return {
 			local builtin = require("telescope.builtin")
 			vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
 			vim.keymap.set("n", "<leader>fe", builtin.live_grep, {})
-			vim.keymap.set("n", "<A-f>", function()
+			vim.keymap.set("n", "<C-f>", function()
 				builtin.oldfiles({
 					only_cwd = true, -- Restricts to files in the current working directory
 				})

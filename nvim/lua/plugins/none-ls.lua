@@ -20,12 +20,6 @@ return {
 				null_ls.builtins.formatting.clang_format,
 				null_ls.builtins.diagnostics.cppcheck,
 
-				-- Java
-				null_ls.builtins.formatting.google_java_format,
-				--        null_ls.builtins.diagnostics.checkstyle.with({
-				--          extra_args = { "-c", "/google_checks.xml" },
-				--        }),
-
 				--      -- Python
 				null_ls.builtins.formatting.black,
 				-- null_ls.builtins.diagnostics.ruff,

@@ -1,4 +1,4 @@
-return 
+return
 {
 		"hrsh7th/nvim-cmp",
 		-- load cmp on InsertEnter
@@ -23,10 +23,14 @@ return
 				mapping = cmp.mapping.preset.insert({
 				--	['<C-b>'] = cmp.mapping.scroll_docs(-4),
 				--	['<C-k>'] = cmp.mapping.scroll_docs(4),
-          ['<A-j>'] = cmp.mapping.select_next_item(),  -- Move to the next item in the autocomplete menu
-          ['<A-k>'] = cmp.mapping.select_prev_item(),  -- Move to the previous item in the autocomplete menu
-					['<A-Space>'] = cmp.mapping.complete(),
-					['<A-e>'] = cmp.mapping.abort(),
+          ['<C-j>'] = cmp.mapping.select_next_item(),  -- Move to the next item in the autocomplete menu
+          ['jj'] = cmp.mapping(function(fallback)
+            if cmp.visible() then cmp.abort() end
+            vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Esc>', true, false, true), 'n', false)
+          end, { 'i' }),
+          ['<C-k>'] = cmp.mapping.select_prev_item(),  -- Move to the previous item in the autocomplete menu
+					['<C-Space>'] = cmp.mapping.complete(),
+					['<C-e>'] = cmp.mapping.abort(),
 					-- Accept currently selected item.
 					-- Set `select` to `false` to only confirm explicitly selected items.
           ['<C-o>'] = cmp.mapping.confirm({ select = true }), -- Confirm the currently selected autocomplete item

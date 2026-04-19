@@ -1,0 +1,10 @@
+[Unit]
+Description=Re-run display setup on monitor hotplug
+After=graphical.target
+
+[Service]
+Type=oneshot
+User=nhatbui
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/home/nhatbui/.Xauthority
+ExecStart=/home/nhatbui/.config/i3/display_setup.sh

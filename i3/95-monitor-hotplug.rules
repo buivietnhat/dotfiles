@@ -1,0 +1,3 @@
+# Trigger monitor-hotplug.service whenever a DRM display state changes
+# (monitor plugged in or unplugged)
+SUBSYSTEM=="drm", ACTION=="change", TAG+="systemd", ENV{SYSTEMD_WANTS}="monitor-hotplug.service"

@@ -29,7 +29,7 @@ return
 					['<A-e>'] = cmp.mapping.abort(),
 					-- Accept currently selected item.
 					-- Set `select` to `false` to only confirm explicitly selected items.
-          ['<A-o>'] = cmp.mapping.confirm({ select = true }), -- Confirm the currently selected autocomplete item
+          ['<C-o>'] = cmp.mapping.confirm({ select = true }), -- Confirm the currently selected autocomplete item
 				}),
 				sources = cmp.config.sources({
 					{ name = 'nvim_lsp' },

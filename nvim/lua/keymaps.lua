@@ -101,7 +101,6 @@ vim.keymap.set("n", "*", "*zz", { silent = true })
 vim.keymap.set("n", "#", "#zz", { silent = true })
 vim.keymap.set("n", "g*", "g*zz", { silent = true })
 
--- vim.keymap.set("n", "<C-o>", "<C-o>zz", { silent = true })
 
 -- no arrow keys --- force yourself to use the home row
 vim.keymap.set("n", "<up>", "<nop>")

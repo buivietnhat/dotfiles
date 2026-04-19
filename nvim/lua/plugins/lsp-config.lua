@@ -29,7 +29,15 @@ return {
 					-- See `:help vim.lsp.*` for documentation on any of the below functions
 					local opts = { buffer = ev.buf }
 					vim.keymap.set("n", "<C-Shift-b>", vim.lsp.buf.declaration, opts)
-					vim.keymap.set("n", "<C-o>", vim.lsp.buf.definition, opts)
+					vim.keymap.set("n", "<C-o>", function()
+						local orig = vim.lsp.handlers["textDocument/definition"]
+						vim.lsp.handlers["textDocument/definition"] = function(...)
+							orig(...)
+							vim.lsp.handlers["textDocument/definition"] = orig
+							vim.cmd("normal! zz")
+						end
+						vim.lsp.buf.definition()
+					end, opts)
 
 					vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 					vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)

@@ -83,13 +83,14 @@ vim.keymap.set("v", "-", "%")
 vim.keymap.set("o", "-", "%")
 
 -- Remap Ctrl-i to work like Ctrl-o (jump back)
-vim.keymap.set("n", "<C-i>", "<C-o>")
+vim.keymap.set("n", "<C-i>", "<C-o>zz")
 
 -- Remap Ctrl-b to work like Ctrl-i (jump forward)
 vim.keymap.set("n", "<C-b>", "<C-i>")
 
 -- Quick duplicate
 vim.keymap.set("n", "<A-d>", "yyp")
+vim.keymap.set("i", "<A-d>", "<Esc>yypi")
 
 -- Quick delete
 vim.keymap.set("n", "D", "d$")

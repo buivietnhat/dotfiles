@@ -24,8 +24,6 @@ vim.keymap.set("n", "<C-k>", "k", { noremap = true, silent = true })
 
 vim.keymap.set("i", "<C-l>", "<C-o>$", { noremap = true, silent = true })
 vim.keymap.set("i", "<C-h>", "<C-o>^", { noremap = true, silent = true })
-vim.keymap.set("i", "<C-j>", "<C-o>j", { noremap = true, silent = true })
-vim.keymap.set("i", "<C-k>", "<C-o>k", { noremap = true, silent = true })
 
 vim.keymap.set("v", "<C-l>", "$", { noremap = true, silent = true })
 vim.keymap.set("v", "<C-h>", "^", { noremap = true, silent = true })

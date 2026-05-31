@@ -260,15 +260,11 @@ bar {
 }
 
 
-#set up display properly
-# disabled temporarily
-#exec --no-startup-id ~/.config/i3/display_setup.sh
-
 # Remap Caps Lock to Escape
 exec_always --no-startup-id setxkbmap -option caps:escape
 
-# Run the dynamic workspace assignment script at startup
-exec --no-startup-id ~/.config/i3/dynamic_workspace.sh
+# Set up display layout and assign workspaces to outputs
+exec_always --no-startup-id ~/.config/i3/dynamic_workspace.sh
 
 # Restart i3
 bindsym $mod+Shift+r restart

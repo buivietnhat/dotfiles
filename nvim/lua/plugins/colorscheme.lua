@@ -36,7 +36,7 @@ return {
 			require("github-theme").setup({})
 			vim.cmd("colorscheme github_dark_dimmed")
 
-			vim.api.nvim_set_hl(0, "Comment", { fg = "#fe8019", italic = true })
+			vim.api.nvim_set_hl(0, "Comment", { fg = "#6bc46d" })
 			vim.api.nvim_set_hl(0, "SignColumn", { bg = "NONE" })
 			vim.api.nvim_set_hl(0, "LineNr", { fg = "#636e7b", bg = "NONE" })
 			vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#6cb6ff", bg = "#2d333b", bold = true })

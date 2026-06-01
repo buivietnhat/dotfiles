@@ -2,6 +2,7 @@ return {
 	-- Plugin specification for Lazy.nvim
 	{
 		"neovim/nvim-lspconfig",
+		dependencies = { "hrsh7th/cmp-nvim-lsp" },
 		config = function()
 			local lspconfig = require("lspconfig")
 
@@ -69,8 +70,8 @@ return {
 				end,
 			})
 
-			-- Define capabilities
-			local capabilities = vim.lsp.protocol.make_client_capabilities()
+			-- Define capabilities with cmp_nvim_lsp snippet support
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			-- Setup clangd with custom on_attach and capabilities
 			lspconfig.clangd.setup({
@@ -131,7 +132,7 @@ return {
 			-- Set up for golang
 			lspconfig.gopls.setup({})
 
-			lspconfig.html.setup({})
+			lspconfig.html.setup({ capabilities = capabilities })
 
 			-- CSS
 			lspconfig.cssls.setup({})

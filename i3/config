@@ -241,16 +241,15 @@ set $darkgray #1d2021
 set $lightgray #bdae93
 bar {
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
-        font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
         font pango:Noto Sans Mono 11
         tray_output primary
-        position bottom
+        position top
         colors {
           # bar background color
           background $bg
           # text color used for blocks that do not have a color specified.
           statusline $lightgray
-          # workspaces section            
+          # workspaces section
           #                    border  backgr. text
           focused_workspace    $lightgray $lightgray $bg
           inactive_workspace   $darkgray $darkgray $lightgray

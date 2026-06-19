@@ -259,8 +259,7 @@ bar {
 }
 
 
-# Remap Caps Lock to Escape
-exec_always --no-startup-id setxkbmap -option caps:escape
+# Caps Lock -> Escape is handled by keyd (see keyd/default.conf)
 
 # Set up display layout and assign workspaces to outputs
 exec_always --no-startup-id ~/.config/i3/dynamic_workspace.sh

@@ -10,6 +10,7 @@ return
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
+			"hrsh7th/vim-vsnip",
 		},
 		config = function()
 			local cmp = require'cmp'
@@ -17,6 +18,10 @@ return
 				snippet = {
 					-- REQUIRED by nvim-cmp. get rid of it once we can
 					expand = function(args)
+						-- vim-vsnip is a plugin dependency, but being lazy-loaded
+						-- via `dependencies` doesn't guarantee it's sourced by the
+						-- time a snippet needs expanding, so force-load it here.
+						require("lazy").load({ plugins = { "vim-vsnip" } })
 						vim.fn["vsnip#anonymous"](args.body)
 					end,
 				},

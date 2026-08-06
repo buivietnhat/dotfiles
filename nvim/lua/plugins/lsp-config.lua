@@ -73,6 +73,17 @@ return {
 			-- Define capabilities with cmp_nvim_lsp snippet support
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+			-- nvim-lspconfig's clangd default_config offers
+			-- capabilities.offsetEncoding = {'utf-8', 'utf-16'} (clangd's own
+			-- extension, not the standard LSP 3.17 negotiation Nvim 0.9 doesn't
+			-- implement). clangd picks utf-8 from that list, and lspconfig's
+			-- generic on_init hook then sets this client's offset_encoding to
+			-- utf-8, while every other client on the buffer (e.g. null-ls) stays
+			-- at Nvim's default utf-16. That mismatch triggers "multiple
+			-- different client offset_encodings detected for buffer". Only offer
+			-- utf-16 so clangd never picks anything else.
+			capabilities.offsetEncoding = { "utf-16" }
+
 			-- Setup clangd with custom on_attach and capabilities
 			lspconfig.clangd.setup({
 				on_attach = function(client, bufnr)
